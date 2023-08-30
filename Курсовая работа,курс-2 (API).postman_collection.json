@@ -1,0 +1,524 @@
+{
+	"info": {
+		"_postman_id": "5622b683-3f44-4b71-b6b6-abe633551eac",
+		"name": "Курсовая работа,курс-2 (API)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27501419"
+	},
+	"item": [
+		{
+			"name": "Получение расписания",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"from\": \"2023-06-26T00:00:00+03:00\",\r\n    \"till\": \"2023-07-03T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}events",
+					"host": [
+						"{{Курс2URL}}events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание личного события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"myid\"\r",
+							"var value = pm.response.json().data.payload.id \r",
+							"pm.collectionVariables.set(key, value)\r",
+							"\r",
+							"var key = \"startAt\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"pm.collectionVariables.set(key, value)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\":\"Отдых\",\r\n    \"title\": \"Fishman\",\r\n    \"startAt\": \"2023-07-30T17:30:00+03:00\",\r\n    \"endAt\": \"2023-07-30T18:00:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}createPersonal",
+					"host": [
+						"{{Курс2URL}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Редактирование личного события Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"myid\"\r",
+							"var value = pm.response.json().data.payload.id \r",
+							"pm.collectionVariables.set(key, value)\r",
+							"\r",
+							"var key = \"startAt\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"description\": \"Отдых окончен\",\r\n    \"title\": \"Fishman\",\r\n    \"startAt\": \"2023-07-30T17:30:00+03:00\",\r\n    \"endAt\": \"2023-07-30T18:00:00+03:00\",\r\n    \"id\":{{myid}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}updatePersonal",
+					"host": [
+						"{{Курс2URL}}updatePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение цвета личного события личного события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"myid\"\r",
+							"var value = pm.response.json().data.payload.id \r",
+							"pm.collectionVariables.set(key, value)\r",
+							"\r",
+							"var key = \"startAt\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"pm.collectionVariables.set(key, value)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"Отдых окончен\",\r\n    \"title\": \"Fishman\",\r\n    \"startAt\": \"2023-07-30T17:30:00+03:00\",\r\n    \"endAt\": \"2023-07-30T18:00:00+03:00\",\r\n    \"id\":{{myid}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}updatePersonal",
+					"host": [
+						"{{Курс2URL}}updatePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание личного события в прошлом месяце",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"myid\"\r",
+							"var value = pm.response.json().data.payload.id \r",
+							"pm.collectionVariables.set(key, value)\r",
+							"\r",
+							"var key = \"startAt\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"pm.collectionVariables.set(key, value)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\":\"Отдых\",\r\n    \"title\": \"Fishman\",\r\n    \"startAt\": \"2023-06-02T17:30:00+03:00\",\r\n    \"endAt\": \"2023-06-02T18:00:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}createPersonal",
+					"host": [
+						"{{Курс2URL}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание личного события с продолжительностью в 2 месяца",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var key = \"myid\"\r",
+							"var value = pm.response.json().data.payload.id \r",
+							"pm.collectionVariables.set(key, value)\r",
+							"\r",
+							"var key = \"startAt\"\r",
+							"var value = pm.response.json().data.startAt\r",
+							"pm.collectionVariables.set(key, value)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\":\"\",\r\n    \"title\": \"Fishman\",\r\n    \"startAt\": \"2023-07-03T17:30:00+03:00\",\r\n    \"endAt\": \"2023-09-03T18:00:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}createPersonal",
+					"host": [
+						"{{Курс2URL}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание личного события без описания Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\":\"\",\r\n    \"title\": \"Fishman\",\r\n    \"startAt\": \"2023-07-03T17:30:00+03:00\",\r\n    \"endAt\": \"2023-07-03T18:00:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}createPersonal",
+					"host": [
+						"{{Курс2URL}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Личное событие с некорректной датой",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"Отдых окончен\",\r\n    \"title\": \"Fishman\",\r\n    \"startAt\": \"2023-07-30T17:30:00+03:00\",\r\n    \"endAt\": \"2023-07-35T18:00:00+03:00\",\r\n    \"id\":{{myid}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}updatePersonal",
+					"host": [
+						"{{Курс2URL}}updatePersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Личное событие без даты",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\":\"Отдых\",\r\n    \"title\": \"Fishman\",\r\n    \"startAt\": \"17:30:00+03:00\",\r\n    \"endAt\": \"2023-07-30T18:00:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}createPersonal",
+					"host": [
+						"{{Курс2URL}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создание личного события без названия",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\":\"Отдых\",\r\n    \"title\": \"\",\r\n    \"startAt\": \"2023-07-03T17:30:00+03:00\",\r\n    \"endAt\": \"2023-07-03T18:00:00+03:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}createPersonal",
+					"host": [
+						"{{Курс2URL}}createPersonal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление  личного события",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token_global={{K2}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": {{myid}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Курс2URL}}removePersonal",
+					"host": [
+						"{{Курс2URL}}removePersonal"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "K2",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjE0ODk0MjUwLCJpZGVudGl0eSI6InRlc3QudHN0MzQ1QHNreWVuZy5ydSIsImlkZW50aXR5TG9naW4iOm51bGwsImlkZW50aXR5RW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJpZGVudGl0eVBob25lIjpudWxsLCJuYW1lIjoidGVzdCIsInN1cm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0LnRzdDM0NUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6Ik9CaTVYUHhxS3ZmOUh3eDlzR29IYVVYRnBjS2xwT0ROIiwiYnJhbmQiOm51bGwsImV4cCI6MTY4ODM4Mzc5MiwiYUlzU3Ryb25nIjp0cnVlLCJhVHlwZSI6IlVTRVJOQU1FX1BBU1NXT1JEIiwiYVRpbWUiOjE2ODgyOTczNDIsInJvbGVzIjpbIlJPTEVfVEVBQ0hFUl9DQU5ESURBVEUiLCJST0xFX1RFQUNIRVJfQ0FORElEQVRFX0JBU0VfQUNDRVNTIiwiUk9MRV9UVENfVVNBR0UiLCJST0xFX1ZJTUJPWF9URUFDSEVSX1VTQUdFIiwiUk9MRV9URUFDSEVSIiwiUk9MRV9DUk0yX1RFQUNIRVJfQUNDRVNTIiwiUk9MRV9NQVRIX1RFQUNIRVIiLCJST0xFX01BVEhfQ09OVEVOVF9USEVNRV9WSUVXIl19.ehSkCyvBYIj2f3gbEbhgud5RpUB-bcVibO0JKE5OxUwW584QueCefdfIs3Jn7yLOXOwuXCrQYxRqnD_nzYby70UUB1FVA-wHyJ8w9GrCpQeNeNS3jY7dsZdWN93owwpjof0na-7rnZPtrZ4pJpTdkavsNc3p62ewWX1cBW7qMmlVFAPkaU2AmjSGZyZ8BcfqGw-H6mNuaXGPF9H5BW6KUUoJJqa3wYyEW-ak6kRBNv9Jp_owZjjMtCIy0CKgnhyaivFEB0K7bdPEUlNIuDq-5M4poYIrixSpqw93MZo1MFPf6b3eoLRGzLfczqBdHWkMrdcQM0VphdpASTL7RY6ALy8Dso6Flu8y3A5sq573mLpfgOqzvLojUIXC2D6GvnEsiixC7bV1BZFpVXGOCahRSnfFA9QKIgl3M5yyNNAQHlzzHLetAIAtZ6yBclDw-RK0k9vS-n3CJRHL_Zj-puJoag7fbGjDVD5IRxZ5uS5pm71N6gUSlPuKWG4V86b52hC5fluNO_rqYdyceav2n4pGzmnBf7w87yXh9zFopOG_6x4bvea0xqncgzjWyHs6jCLf4fcYxkbaZfoB6Cw3Yq1UoEXT5nhaUIog0jlHqsHeVkWhAyhGKrv8_KeXttWBY4cQ_hjtne-HzTGvzj6z2RQX8JTDLRZTLF_unwUrR8l0hwE",
+			"type": "string"
+		},
+		{
+			"key": "Курс2URL",
+			"value": "https://api-teachers.skyeng.ru/v2/schedule/",
+			"type": "string"
+		},
+		{
+			"key": "your_variable_name_here",
+			"value": ""
+		},
+		{
+			"key": "myid",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "startAt",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "$randomAbbreviation",
+			"value": "title",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
