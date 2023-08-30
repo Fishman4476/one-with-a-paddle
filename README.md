@@ -31,10 +31,11 @@
 #### Была поставлена задача провести:
 
 1. Smoky тестиование.https://github.com/Fishman4476/one-with-a-paddle/commit/54ea3c331f6bfc26e06bd6619944011b36ff96a0
-2. Функциональное тестирование.
-3. Приёмочное тестирование.
-4. Регрессионное тестирование.https://github.com/Fishman4476/one-with-a-paddle/blob/main/1682360840514.png
-5. Тестирование API.
-6. Так же было проведено тестирование требований. https://github.com/Fishman4476/one-with-a-paddle/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%20%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9.png
+  
+3. Функциональное тестирование.
+4. Приёмочное тестирование.
+5. Регрессионное тестирование.https://github.com/Fishman4476/one-with-a-paddle/blob/main/1682360840514.png
+6. Тестирование API.
+7. Так же было проведено тестирование требований. https://github.com/Fishman4476/one-with-a-paddle/blob/main/%D1%81%D0%BA%D1%80%D0%B8%D0%BD%20%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9.png
 
 
