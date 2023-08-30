@@ -26,4 +26,5 @@
 ---
 
 ## МОЙ ПЕРВЫЙ ПРОЕКТ.
+https://mint-save-862.notion.site/1-2-323d0b44165f4c33a49337257f8d9ceb?pvs=4
 
