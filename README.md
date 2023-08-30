@@ -12,11 +12,16 @@
 
 ---
 
-### :hammer_and_wrench: Инструменты с которыми я работал на проекте :
+### :hammer_and_wrench: Tools :
 <img>
 <img src="https://github.com/devicons/devicon/blob/master/icons/confluence/confluence-original-wordmark.svg" title="confluence" alt="confluence" width="40" height="40"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original-wordmark.svg" title="jira" alt="jira" width="40" height="40"/>&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original-wordmark.svg"  title="postgresql" alt="postgresql" width="40" height="40"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original-wordmark.svg" title="postgresql" alt="postgresql" width="40" height="40"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/visualstudio/visualstudio-plain-wordmark.svg" title="visualstudio" alt="visualstudio" width="40" height="40"/>&nbsp;
+<img src="" title="visualstudio" alt="visualstudio" width="40" height="40"/>
+</div>
+
+# qase.io, Postman,Fiddler, Swagger, Trello,SoapUI, xCode, Chrome DevTools.
 
 
 ---
