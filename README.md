@@ -67,8 +67,8 @@ https://github.com/Fishman4476/one-with-a-paddle/blob/main/2023-08-31%20(5).png
 ---
 
 # Контакты
-email  boizov.76@mail.ru
-telegram  @ju585
+1. email  boizov.76@mail.ru
+2. telegram  @ju585
  
 
 
