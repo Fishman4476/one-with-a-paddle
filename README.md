@@ -30,7 +30,7 @@
 
 #### Была поставлена задача провести:
 
-1. Smoky тестиование.
+1. Smoky тестиование.https://github.com/Fishman4476/one-with-a-paddle/commit/54ea3c331f6bfc26e06bd6619944011b36ff96a0
 2. Функциональное тестирование.
 3. Приёмочное тестирование.
 4. Регрессионное тестирование.https://github.com/Fishman4476/one-with-a-paddle/blob/main/1682360840514.png
