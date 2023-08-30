@@ -1,2 +1,2 @@
 # one-with-a-paddle
-Novice tester portfolio
+Портфолио начинающего тестировщика
